@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1743756214
+::res://images/::1743756214
+board.png::CompressedTexture2D::8635271535522287041::1743755808::1743756215::1::::<><><>0<>0<>7b3037fdb42d090a1f7e8e8c4a825673<>res://.godot/imported/board.png-5ea009d607caf5c82588eee8612d8510.ctex::
+::res://scenes/::1743756214
+card.tscn::PackedScene::8646892035042866949::1743756059::0::1::::<><><>0<>0<><>::uid://bcd8a3064x0m1::::res://scripts/card.gd
+main.tscn::PackedScene::5047276852099951081::1743756214::0::1::::<><><>0<>0<><>::uid://ussmwmxvkeko::::res://scripts/game.gd<>uid://dva8wpuxtjc78::::res://images/board.png
+::res://scripts/::1743756132
+card.gd::GDScript/GDScript::2534996675714738110::1743755808::0::1::::<>Node2D<><>0<>0<><>::
+game.gd::GDScript/GDScript::1442051182855210738::1743755808::0::1::::<>Node2D<><>0<>0<><>::
+global.gd::GDScript/GDScript::4779292794054033952::1743755808::0::1::::<>Node<><>0<>0<><>::
