@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvgvbwb4q0wd6"]
+[gd_scene load_steps=3 format=3 uid="uid://dvgvbwb4q0wd6"]
 
 [ext_resource type="Script" uid="uid://bcd8a3064x0m1" path="res://scripts/card.gd" id="1_kikvd"]
 
-[node name="card" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d81rb"]
+size = Vector2(187, 146)
+
+[node name="card" type="Area2D"]
 script = ExtResource("1_kikvd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -30,5 +33,9 @@ text = "卡牌效果"
 offset_right = 185.0
 offset_bottom = 147.0
 flat = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(93, 74)
+shape = SubResource("RectangleShape2D_d81rb")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

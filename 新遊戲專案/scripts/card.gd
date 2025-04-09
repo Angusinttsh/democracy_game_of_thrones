@@ -7,23 +7,27 @@ var card_X = 0
 var card_Y = 0
 var is_dragging = false
 var offset = Vector2.ZERO  # 記錄初始相對位置
+var original_position = Vector2.ZERO
 
 func _on_button_pressed() -> void:
 	if is_dragging == true:
 		is_dragging = false
-		card_X = int(round((position.x - 522) / 231))
-		if position.y < 421:
-			card_Y = int(round((position.y - 76) / 200))
-			if card_Y >= 2:
-				card_Y = 1
-			position = Vector2(522+(231*card_X), 76+(200*card_Y))
+		Global.card_is_dragging = null
+		if Global.cards_in_area.size() == 0:
+			position = original_position
+		elif Global.cards_in_area.size() == 1:
+			position = Global.cards_in_area[0].position
 		else:
-			card_Y = int(round((position.y - 134) / 200))
-			if card_Y < 2:
-				card_Y = 2
-			position = Vector2(522+(231*card_X), 134+(200*card_Y))
+			var min = Global.cards_in_area[0]
+			for i in Global.cards_in_area.size():
+				if (min.position - position).length() > (Global.cards_in_area[i].position - position).length():
+					min = Global.cards_in_area[i]
+			position = min.position
+		Global.cards_in_area.clear()
 	else:
 		is_dragging = true
+		original_position = position
+		Global.card_is_dragging = self
 	offset = get_global_mouse_position() - global_position  # 記錄物件與滑鼠的相對位置
 # 當滑鼠按鍵釋放時
 func _ready() -> void:
